@@ -49,8 +49,11 @@ local VOICETABLE_WHITEY = {
 
 local VOICETABLE_MUNKSHROOM = {
     [CHAR_SOUND_ATTACKED] = 'MUNKSHROOM_SOUND_ATTACKED.ogg',
+    [CHAR_SOUND_COUGHING1] = 'MUNKSHROOM_SOUND_COUGHING1.ogg',
+    [CHAR_SOUND_COUGHING2] = 'MUNKSHROOM_SOUND_COUGHING2.ogg',
+    [CHAR_SOUND_COUGHING3] = 'MUNKSHROOM_SOUND_COUGHING3.ogg',
     [CHAR_SOUND_DOH] = 'MUNKSHROOM_SOUND_DOH.ogg',
-    [CHAR_SOUND_DROWNING] = "MUNKSHROOM_SOUND_DYING.ogg",
+    [CHAR_SOUND_DROWNING] = "MUNKSHROOM_SOUND_DROWNING.ogg",
     [CHAR_SOUND_DYING] = 'MUNKSHROOM_SOUND_DYING.ogg',
     [CHAR_SOUND_EEUH] = 'MUNKSHROOM_SOUND_EEUH.ogg',
     [CHAR_SOUND_GROUND_POUND_WAH] = 'MUNKSHROOM_SOUND_GROUND_POUND_WAH.ogg',
@@ -59,7 +62,7 @@ local VOICETABLE_MUNKSHROOM = {
     [CHAR_SOUND_LETS_A_GO] = 'MUNKSHROOM_SOUND_LETS_A_GO.ogg',
     [CHAR_SOUND_HERE_WE_GO] = 'MUNKSHROOM_SOUND_HERE_WE_GO.ogg',
     [CHAR_SOUND_HRMM] = 'MUNKSHROOM_SOUND_HRMM.ogg',
-    [CHAR_SOUND_HOOHOO] = 'MUNKSHROOM_SOUND_UH.ogg',
+    [CHAR_SOUND_HOOHOO] = 'MUNKSHROOM_SOUND_HOOHOO.ogg',
     [CHAR_SOUND_UH2] = 'MUNKSHROOM_SOUND_UH2.ogg',
     [CHAR_SOUND_UH] = 'MUNKSHROOM_SOUND_UH.ogg',
     [CHAR_SOUND_UH2_2] = 'MUNKSHROOM_SOUND_UH2.ogg',
@@ -74,10 +77,15 @@ local VOICETABLE_MUNKSHROOM = {
     [CHAR_SOUND_TWIRL_BOUNCE] = 'MUNKSHROOM_SOUND_TWIRL_BOUNCE.ogg',
     [CHAR_SOUND_WAAAOOOW] = 'MUNKSHROOM_SOUND_WAAAOOOW.ogg',
     [CHAR_SOUND_WAH2] = 'MUNKSHROOM_SOUND_PUNCH_WAH.ogg',
+    [CHAR_SOUND_WHOA] = 'MUNKSHROOM_SOUND_WHOA.ogg',
     [CHAR_SOUND_YAHOO] = 'MUNKSHROOM_SOUND_YAHOO.ogg',
     [CHAR_SOUND_YAHOO_WAHA_YIPPEE] = {'MUNKSHROOM_SOUND_YAHOO.ogg', 'MUNKSHROOM_SOUND_WAHA.ogg', 'MUNKSHROOM_SOUND_YIPPEE.ogg'},
-    [CHAR_SOUND_YAH_WAH_HOO] = {'MUNKSHROOM_SOUND_PUNCH_YAH.ogg', 'MUNKSHROOM_SOUND_PUNCH_WAH.ogg', 'MUNKSHROOM_SOUND_PUNCH_HOO.ogg'},
-    [CHAR_SOUND_YAWNING] = 'MUNKSHROOM_SOUND_IMA_TIRED',
+    [CHAR_SOUND_YAH_WAH_HOO] = {'MUNKSHROOM_SOUND_YAH.ogg', 'MUNKSHROOM_SOUND_WAH.ogg', 'MUNKSHROOM_SOUND_HOO.ogg'},
+    [CHAR_SOUND_IMA_TIRED] = 'MUNKSHROOM_SOUND_IMA_TIRED',
+    [CHAR_SOUND_YAWNING] = 'MUNKSHROOM_SOUND_YAWNING.ogg',
+    [CHAR_SOUND_SNORING1] = 'MUNKSHROOM_SOUND_SNORING1.ogg',
+    [CHAR_SOUND_SNORING2] = 'sk_CHAR_SOUND_SNORING2.ogg',
+    [CHAR_SOUND_SNORING3] = {'MUNKSHROOM_SOUND_SNORING2.ogg', 'MUNKSHROOM_SOUND_SNORING1.ogg', 'MUNKSHROOM_SOUND_SNORING3.ogg'},
 }
 
 local VOICETABLE_SNOWKING = {
@@ -144,22 +152,16 @@ local PALETTE_WHITEY = {
     [CAP]    = "000000",
     [EMBLEM] = "000000"
 }
-
---[[ 
-    
-    ILL DEAL W THIS LATER!!! HOLD TIGHT!!!
-
     local PALETTE_MUNKSHROOM = {
-    [PANTS]  = "0066cc",
-    [SHIRT]  = "feebf7",
-    [GLOVES] = "fddfdb",
-    [SHOES]  = "ff2d32",
-    [HAIR]   = "51a5ed",
-    [SKIN]   = "fddfdb",
-    [CAP]    = "ff2d32",
-    [EMBLEM] = "ff2d32",
+    [PANTS]  = "f0a976",
+    [SHIRT]  = "ff0000",
+    [GLOVES] = "ffffff",
+    [SHOES]  = "2f2f2f",
+    [HAIR]   = "ffffff",
+    [SKIN]   = "fed5a1",
+    [CAP]    = "ff0000",
+    [EMBLEM] = "ffff51",
 }
-]]--
 
 local PALETTE_SNOWKING = {
     [SHIRT] = "196788",
@@ -204,6 +206,7 @@ local function on_character_select_load()
     _G.charSelect.character_add_palette_preset(E_MODEL_WHITEY, PALETTE_WHITEY)
     CT_MUNKSHROOM = _G.charSelect.character_add("Alvin The Munkshroom", {"After a fierce battle to save the E3 Gnome", "Alvin the Munkshroom finds himself on", "The outskirts of the Princess' Castle."}, "MlopFunny, PainterSeap", {r = 255, g = 0, b = 0}, E_MODEL_MUNKSHROOM, CT_TOAD, TEX_MUNKSHROOM_LIFE_ICON)
     _G.charSelect.character_add_voice(E_MODEL_MUNKSHROOM, VOICETABLE_MUNKSHROOM)
+    _G.charSelect.character_add_palette_preset(E_MODEL_MUNKSHROOM, PALETTE_MUNKSHROOM)
     CT_ARTHURXMAS = _G.charSelect.character_add("Arthur", {"Christmas will be magical", "Just like in a fairy tale."}, "CT Himself", {r = 255, g = 255, b = 255}, E_MODEL_ARTHUR, CT_MARIO, TEX_ARTHUR_LIFE_ICON)
     _G.charSelect.character_add_palette_preset(E_MODEL_ARTHUR, PALETTE_ARTHUR)
     CT_SNOWKING = _G.charSelect.character_add("Snow King", "Part of the CS Winter Collab! Here comes the Snow King from Mario Golf: Super Rush! Merry Christmas! VOICED BY Pyronoid!", "Melzinoff, Pyronoid!", {r = 255, g = 200, b = 200}, E_MODEL_SNOWKING, CT_MARIO, TEX_SNOWKING)
