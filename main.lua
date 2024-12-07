@@ -10,9 +10,12 @@ end
 
 local E_MODEL_WHITEY = smlua_model_util_get_id("Whitey_geo")
 local E_MODEL_MUNKSHROOM = smlua_model_util_get_id("alvin_munkshroom_geo")
+local E_MODEL_ARTHUR = smlua_model_util_get_id("arthurxmas_geo")
 
 local TEX_WHITEY_LIFE_ICON = get_texture_info("whitey") -- Located in "textures"
 local TEX_MUNKSHROOM_LIFE_ICON = get_texture_info("alvin") -- Located in "textures"
+local TEX_ARTHUR_LIFE_ICON = get_texture_info("arthurxmas") -- Located in "textures"
+
 
 local VOICETABLE_WHITEY = {
     [CHAR_SOUND_ATTACKED] = 'WhiteyHurtAAA.ogg',
@@ -87,6 +90,17 @@ local PALETTE_WHITEY = {
     [EMBLEM] = "ff2d32",
 }
 
+    local PALETTE_ARTHUR = {
+    [PANTS]  = "999be5",
+    [SHIRT]  = "ffffff",
+    [GLOVES] = "ffffff",
+    [SHOES]  = "000000",
+    [HAIR]   = "000000",
+    [SKIN]   = "bb985e",
+    [CAP]    = "000000",
+    [EMBLEM] = "000000"
+}
+
 --[[ 
     
     ILL DEAL W THIS LATER!!! HOLD TIGHT!!!
@@ -111,6 +125,8 @@ local function on_character_select_load()
     _G.charSelect.character_add_palette_preset(E_MODEL_WHITEY, PALETTE_WHITEY)
     CT_MUNKSHROOM = _G.charSelect.character_add("Alvin The Munkshroom", {"After a fierce battle to save the E3 Gnome", "Alvin the Munkshroom finds himself on", "The outskirts of the Princess' Castle."}, "MlopFunny, PainterSeap", {r = 255, g = 0, b = 0}, E_MODEL_MUNKSHROOM, CT_TOAD, TEX_MUNKSHROOM_LIFE_ICON)
     _G.charSelect.character_add_voice(E_MODEL_MUNKSHROOM, VOICETABLE_MUNKSHROOM)
+    CT_ARTHURXMAS = _G.charSelect.character_add("Arthur", {"Christmas will be magical", "Just like in a fairy tale."}, "CT Himself", {r = 255, g = 255, b = 255}, E_MODEL_ARTHUR, CT_MARIO, TEX_ARTHUR_LIFE_ICON)
+    _G.charSelect.character_add_palette_preset(E_MODEL_ARTHUR, PALETTE_ARTHUR)
     CSloaded = true
 end
 
