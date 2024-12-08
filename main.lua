@@ -132,14 +132,14 @@ local VOICETABLE_SNOWKING = {
     }
 
 local PALETTE_WHITEY = {
-    [PANTS]  = "0066cc",
-    [SHIRT]  = "feebf7",
-    [GLOVES] = "fddfdb",
-    [SHOES]  = "ff2d32",
-    [HAIR]   = "51a5ed",
-    [SKIN]   = "fddfdb",
-    [CAP]    = "ff2d32",
-    [EMBLEM] = "ff2d32",
+    [PANTS]  = "675640",
+    [SHIRT]  = "547435",
+    [GLOVES] = "2d3357",
+    [SHOES]  = "2E251c",
+    [HAIR]   = "Fce3cb",
+    [SKIN]   = "14192d",
+    [CAP]    = "1e4526",
+    [EMBLEM] = "c0c380",
 }
 
     local PALETTE_ARTHUR = {
