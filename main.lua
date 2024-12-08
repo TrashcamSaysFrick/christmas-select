@@ -15,7 +15,7 @@ local E_MODEL_SNOWKING = smlua_model_util_get_id("snowking_geo")
 
 local TEX_WHITEY_LIFE_ICON = get_texture_info("whitey") -- Located in "textures"
 local TEX_MUNKSHROOM_LIFE_ICON = get_texture_info("alvin") -- Located in "textures"
-local TEX_ARTHUR_LIFE_ICON = get_texture_info("arthurxmas") -- Located in "textures"
+local TEX_ARTHUR_LIFE_ICON = get_texture_info("arthurxmas-icon") -- Located in "textures"
 local TEX_SNOWKING = get_texture_info("snowking_icon")
 
 local VOICETABLE_WHITEY = {
