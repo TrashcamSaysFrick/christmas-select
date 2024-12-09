@@ -12,11 +12,14 @@ local E_MODEL_WHITEY = smlua_model_util_get_id("Whitey_geo")
 local E_MODEL_MUNKSHROOM = smlua_model_util_get_id("alvin_munkshroom_geo")
 local E_MODEL_ARTHUR = smlua_model_util_get_id("arthurxmas_geo")
 local E_MODEL_SNOWKING = smlua_model_util_get_id("snowking_geo")
+local E_MODEL_GRUNCH = smlua_model_util_get_id("grunch_geo")
 
 local TEX_WHITEY_LIFE_ICON = get_texture_info("whitey") -- Located in "textures"
 local TEX_MUNKSHROOM_LIFE_ICON = get_texture_info("alvin") -- Located in "textures"
 local TEX_ARTHUR_LIFE_ICON = get_texture_info("arthurxmas-icon") -- Located in "textures"
 local TEX_SNOWKING = get_texture_info("snowking_icon")
+local TEX_GRUNCH = get_texture_info("grunch_icon")
+
 
 local VOICETABLE_WHITEY = {
     [CHAR_SOUND_ATTACKED] = 'WhiteyHurtAAA.ogg',
@@ -174,11 +177,29 @@ local PALETTE_SNOWKING = {
     [EMBLEM] = "5A93F7",
 }
 
+local PALETTE_GRUNCH = {
+    [SHIRT] = "6abe30",
+    [SHOES] = "6abe30",
+    [HAIR] = "6abe30",
+    [CAP] = "d95763",
+    [PANTS] = "6abe30",
+    [GLOVES] = "FFFFFF",
+    [SKIN] = "6abe30",
+    [EMBLEM] = "6abe30",
+}
+
 local capSNOWKING = {
     normal = smlua_model_util_get_id("snowking_cap_geo"),
     wing = smlua_model_util_get_id("snowking_wing_cap_geo"),
     metal = smlua_model_util_get_id("snowking_metal_cap_geo"),
     metalWing = smlua_model_util_get_id("snowking_metal_wing_cap_geo")
+}
+
+local capGRUNCH = {
+    normal = smlua_model_util_get_id("grunch_cap_geo"),
+    wing = smlua_model_util_get_id("grunch_wing_cap_geo"),
+    metal = smlua_model_util_get_id("grunch_metal_cap_geo"),
+    metalWing = smlua_model_util_get_id("grunch_winged_metal_cap_geo")
 }
 
 local PM_SNOWKING= {
@@ -214,6 +235,9 @@ local function on_character_select_load()
     _G.charSelect.character_add_caps(E_MODEL_SNOWKING, capSNOWKING)
     _G.charSelect.character_add_palette_preset(E_MODEL_SNOWKING, PALETTE_SNOWKING)
     _G.charSelect.character_add_health_meter(CT_SNOWKING, PM_SNOWKING)
+    CT_GRUNCH = _G.charSelect.character_add("Grinch", "He's a mean one.", "Garlicker", {r = 255, g = 200, b = 200}, E_MODEL_GRUNCH, CT_MARIO, TEX_GRUNCH)
+    _G.charSelect.character_add_caps(E_MODEL_GRUNCH, capGRUNCH)
+    _G.charSelect.character_add_palette_preset(E_MODEL_GRUNCH, PALETTE_GRUNCH)
     CSloaded = true
 end
 
