@@ -26,24 +26,24 @@ local VOICETABLE_WHITEY = {
     [CHAR_SOUND_GROUND_POUND_WAH] = nil,
     [CHAR_SOUND_HAHA] = nil,
     [CHAR_SOUND_HAHA_2] = nil,
-    [CHAR_SOUND_HERE_WE_GO] = 'Technical-Foul.ogg',
-    [CHAR_SOUND_HOOHOO] = 'EEE.ogg',
-    [CHAR_SOUND_MAMA_MIA] = 'This-Might-Be-Harder-Than-I-Thought.ogg',
-    [CHAR_SOUND_OKEY_DOKEY] = 'Technical-Foul.ogg',
+    [CHAR_SOUND_HERE_WE_GO] = 'Whitey-Technical-Foul.ogg',
+    [CHAR_SOUND_HOOHOO] = 'Whitey-EEE.ogg',
+    [CHAR_SOUND_MAMA_MIA] = 'Whitey-This-Might-Be-Harder-Than-I-Thought.ogg',
+    [CHAR_SOUND_OKEY_DOKEY] = 'Whitey-Technical-Foul.ogg',
     [CHAR_SOUND_ON_FIRE] = 'WhiteyHurtAAA.ogg',
     [CHAR_SOUND_OOOF] = 'WhiteyHurtUgh.ogg',
     [CHAR_SOUND_OOOF2] = 'WhiteyHurtAugh.ogg',
-    [CHAR_SOUND_PUNCH_HOO] = 'AAA.ogg',
-    [CHAR_SOUND_PUNCH_WAH] = 'Wah.ogg',
-    [CHAR_SOUND_PUNCH_YAH] = 'YEAAAH.ogg',
-    [CHAR_SOUND_SO_LONGA_BOWSER] = 'Technical-Foul.ogg',
-    [CHAR_SOUND_TWIRL_BOUNCE] = 'Yeahsadeh.ogg',
+    [CHAR_SOUND_PUNCH_HOO] = 'Whitey-AAA.ogg',
+    [CHAR_SOUND_PUNCH_WAH] = 'Whitey-Wah.ogg',
+    [CHAR_SOUND_PUNCH_YAH] = 'Whitey-YEAAAH.ogg',
+    [CHAR_SOUND_SO_LONGA_BOWSER] = 'Whitey-Technical-Foul.ogg',
+    [CHAR_SOUND_TWIRL_BOUNCE] = 'Whitey-Yeahsadeh.ogg',
     [CHAR_SOUND_WAAAOOOW] = 'WhiteyHurtAAA.ogg',
     [CHAR_SOUND_WAH2] = nil,
     [CHAR_SOUND_WHOA] = nil,
-    [CHAR_SOUND_YAHOO] = 'Dont-Forget.ogg',
-    [CHAR_SOUND_YAHOO_WAHA_YIPPEE] = {'Dont-Forget.ogg', 'Wah.ogg', 'YEAAAH.ogg'},
-    [CHAR_SOUND_YAH_WAH_HOO] = {'YEAAAH.ogg', 'Wah.ogg', 'AAA.ogg'},
+    [CHAR_SOUND_YAHOO] = 'Whitey-Dont-Forget.ogg',
+    [CHAR_SOUND_YAHOO_WAHA_YIPPEE] = {'Whitey-Dont-Forget.ogg', 'Whitey-Wah.ogg', 'Whitey-YEAAAH.ogg'},
+    [CHAR_SOUND_YAH_WAH_HOO] = {'Whitey-YEAAAH.ogg', 'Whitey-Wah.ogg', 'Whitey-AAA.ogg'},
     [CHAR_SOUND_YAWNING] = nil,
 }
 
@@ -210,6 +210,7 @@ local function on_character_select_load()
     CT_ARTHURXMAS = _G.charSelect.character_add("Arthur", {"Christmas will be magical", "Just like in a fairy tale."}, "CT Himself", {r = 255, g = 255, b = 255}, E_MODEL_ARTHUR, CT_MARIO, TEX_ARTHUR_LIFE_ICON)
     _G.charSelect.character_add_palette_preset(E_MODEL_ARTHUR, PALETTE_ARTHUR)
     CT_SNOWKING = _G.charSelect.character_add("Snow King", "Part of the CS Winter Collab! Here comes the Snow King from Mario Golf: Super Rush! Merry Christmas! VOICED BY Pyronoid!", "Melzinoff, Pyronoid!", {r = 255, g = 200, b = 200}, E_MODEL_SNOWKING, CT_MARIO, TEX_SNOWKING)
+    _G.charSelect.character_add_voice(E_MODEL_SNOWKING, VOICETABLE_SNOWKING)
     _G.charSelect.character_add_caps(E_MODEL_SNOWKING, capSNOWKING)
     _G.charSelect.character_add_palette_preset(E_MODEL_SNOWKING, PALETTE_SNOWKING)
     _G.charSelect.character_add_health_meter(CT_SNOWKING, PM_SNOWKING)
