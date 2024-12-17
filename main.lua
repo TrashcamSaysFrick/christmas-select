@@ -13,12 +13,14 @@ local E_MODEL_MUNKSHROOM = smlua_model_util_get_id("alvin_munkshroom_geo")
 local E_MODEL_ARTHUR = smlua_model_util_get_id("arthurxmas_geo")
 local E_MODEL_SNOWKING = smlua_model_util_get_id("snowking_geo")
 local E_MODEL_GRUNCH = smlua_model_util_get_id("grunch_geo")
+local E_MODEL_HHGREG = smlua_model_util_get_id("hhgreg_geo")
 
 local TEX_WHITEY_LIFE_ICON = get_texture_info("whitey") -- Located in "textures"
 local TEX_MUNKSHROOM_LIFE_ICON = get_texture_info("alvin") -- Located in "textures"
 local TEX_ARTHUR_LIFE_ICON = get_texture_info("arthurxmas-icon") -- Located in "textures"
 local TEX_SNOWKING = get_texture_info("snowking_icon")
 local TEX_GRUNCH = get_texture_info("grunch_icon")
+local TEX_HHGREG = get_texture_info("hhgreg")
 
 
 local VOICETABLE_WHITEY = {
@@ -188,6 +190,17 @@ local PALETTE_GRUNCH = {
     [EMBLEM] = "6abe30",
 }
 
+local PALETTE_HHGREG = {
+    [SHIRT] = "6abe30",
+    [SHOES] = "6abe30",
+    [HAIR] = "6abe30",
+    [CAP] = "d95763",
+    [PANTS] = "6abe30",
+    [GLOVES] = "FFFFFF",
+    [SKIN] = "6abe30",
+    [EMBLEM] = "6abe30",
+}
+
 local capSNOWKING = {
     normal = smlua_model_util_get_id("snowking_cap_geo"),
     wing = smlua_model_util_get_id("snowking_wing_cap_geo"),
@@ -222,22 +235,24 @@ local PM_SNOWKING= {
 
 local CSloaded = false
 local function on_character_select_load()
-    CT_WHITEY = _G.charSelect.character_add("Whitey", {"Whitey Duvall from Adam Sandler's Eight Crazy Nights", "is now here."}, "Trashcam", {r = 255, g = 200, b = 200}, E_MODEL_WHITEY, CT_MARIO, TEX_WHITEY_LIFE_ICON)
+    CT_WHITEY = _G.charSelect.character_add("Whitey", {"Whitey Duvall from Adam Sandler's Eight Crazy Nights", "is now here."}, "Trashcam", {r = 0, g = 255, b = 0}, E_MODEL_WHITEY, CT_MARIO, TEX_WHITEY_LIFE_ICON)
     _G.charSelect.character_add_voice(E_MODEL_WHITEY, VOICETABLE_WHITEY)
     _G.charSelect.character_add_palette_preset(E_MODEL_WHITEY, PALETTE_WHITEY)
     CT_MUNKSHROOM = _G.charSelect.character_add("Alvin The Munkshroom", {"After a fierce battle to save the E3 Gnome", "Alvin the Munkshroom finds himself on", "The outskirts of the Princess' Castle."}, "MlopFunny, PainterSeap", {r = 255, g = 0, b = 0}, E_MODEL_MUNKSHROOM, CT_TOAD, TEX_MUNKSHROOM_LIFE_ICON)
     _G.charSelect.character_add_voice(E_MODEL_MUNKSHROOM, VOICETABLE_MUNKSHROOM)
     _G.charSelect.character_add_palette_preset(E_MODEL_MUNKSHROOM, PALETTE_MUNKSHROOM)
-    CT_ARTHURXMAS = _G.charSelect.character_add("Arthur", {"Christmas will be magical", "Just like in a fairy tale."}, "CT Himself", {r = 255, g = 255, b = 255}, E_MODEL_ARTHUR, CT_MARIO, TEX_ARTHUR_LIFE_ICON)
+    CT_ARTHURXMAS = _G.charSelect.character_add("Arthur", {"Christmas will be magical", "Just like in a fairy tale."}, "CT Himself", {r = 0, g = 255, b = 0}, E_MODEL_ARTHUR, CT_MARIO, TEX_ARTHUR_LIFE_ICON)
     _G.charSelect.character_add_palette_preset(E_MODEL_ARTHUR, PALETTE_ARTHUR)
-    CT_SNOWKING = _G.charSelect.character_add("Snow King", "Part of the CS Winter Collab! Here comes the Snow King from Mario Golf: Super Rush! Merry Christmas! VOICED BY Pyronoid!", "Melzinoff, Pyronoid!", {r = 255, g = 200, b = 200}, E_MODEL_SNOWKING, CT_MARIO, TEX_SNOWKING)
+    CT_SNOWKING = _G.charSelect.character_add("Snow King", "Part of the CS Winter Collab! Here comes the Snow King from Mario Golf: Super Rush! Merry Christmas! VOICED BY Pyronoid!", "Melzinoff, Pyronoid!", {r = 255, g = 0, b = 0}, E_MODEL_SNOWKING, CT_MARIO, TEX_SNOWKING)
     _G.charSelect.character_add_voice(E_MODEL_SNOWKING, VOICETABLE_SNOWKING)
     _G.charSelect.character_add_caps(E_MODEL_SNOWKING, capSNOWKING)
     _G.charSelect.character_add_palette_preset(E_MODEL_SNOWKING, PALETTE_SNOWKING)
     _G.charSelect.character_add_health_meter(CT_SNOWKING, PM_SNOWKING)
-    CT_GRUNCH = _G.charSelect.character_add("Grinch", "He's a mean one.", "Garlicker", {r = 255, g = 200, b = 200}, E_MODEL_GRUNCH, CT_MARIO, TEX_GRUNCH)
+    CT_GRUNCH = _G.charSelect.character_add("Grinch", "He's a mean one.", "Superclown", {r = 0, g = 255, b = 0}, E_MODEL_GRUNCH, CT_MARIO, TEX_GRUNCH)
     _G.charSelect.character_add_caps(E_MODEL_GRUNCH, capGRUNCH)
     _G.charSelect.character_add_palette_preset(E_MODEL_GRUNCH, PALETTE_GRUNCH)
+    CT_HHGREG = _G.charSelect.character_add("hhgregg", {"Save on everything at Christmas in July", "H-H-H-H-H-H-HHGregg", "Panasonic Blu-Ray, 99 dollars", "H-H-H-H-H-H-HHGregg", "32-inch LCD TV, 299", "LG 42-inch HDTV, 489", "Everything's on sale during Christmas in July", "H-H-H-H", "A snowball in July?", "HHGregg!"}, "Superclown", {r = 255, g = 0, b = 0}, E_MODEL_HHGREG, CT_MARIO, TEX_HHGREG)
+    _G.charSelect.character_add_palette_preset(E_MODEL_HHGREG, PALETTE_HHGREG)
     CSloaded = true
 end
 
