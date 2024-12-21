@@ -1,5 +1,5 @@
 -- name: [CS] Christmas Select
--- description: A Character Select Collab Pack for the Holiday Season!
+-- description: A Character Select Collab Pack for the Holiday Season! Featuring models from Trashcam, Mlopsfunny, CT Himself, Melzinoff, and Superclown. Voice Acting from PainterSeap and Pyronoid. Also Squishy6094 made some cool ornament and peppermint coins. Happy Holidays!
 
 local TEXT_MOD_NAME = "Christmas Select"
 
